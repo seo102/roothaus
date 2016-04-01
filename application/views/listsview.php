@@ -7,7 +7,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 
 <head>
 	<?php include 'common/head.php';?>	
-	<title>쇼프라이스 :: 리스트</title>
+	<title>루트주택 </title>
 </head>
 
 <body>

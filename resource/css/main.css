@@ -54,6 +54,10 @@ body {
 	margin: 30px 0 0 0;
 }
 
+.main-category-icon h6,span {
+	color: white;
+}
+
 .main-category-icon {
 	display: inline-block;
 	margin:0 15px 0 15px;
@@ -149,7 +153,7 @@ body {
 
 
 /* left category tree */
-.tree{border-top:1px solid #000;font-size: 12px;}
+.tree{border-top:1px solid #000;font-size: 18px;}
 .tree,.tree ul{background: #222222;list-style:none;-webkit-padding-start: 0px;}
 .tree h2{font-size:12px;margin:0;}
 .tree h2 a{color:#ccc}
@@ -160,7 +164,7 @@ body {
 .tree .tree-node div + ul div + ul div + ul div{padding-left:42px}
 .tree .tree-node div + ul div + ul div + ul div + ul div{padding-left:52px}
 .tree .tree-node .tree-has-child .tree-button{background:url(http://static.naver.net/ncc/common/img/sp_bu4.png) no-repeat 100% -232px transparent;overflow:hidden;cursor:pointer;_cursor:hand}
-.tree .tree-node .tree-button{display:inline-block;margin:0 -2px 0 0;border:0;background:none;width:9px;height:10px;font-size:0;color:transparent;line-height:200%;position:relative;top:7px}
+.tree .tree-node .tree-button{display:inline-block;margin:0 -2px 0 0;border:0;background:none;width:9px;height:10px;font-size:0;color:transparent;line-height:200%;position:relative;top:12px}
 .tree .tree-node .tree-label{display:inline-block;overflow:hidden;max-width:140px;padding:6px 5px 6px 3px;color:#bbb;letter-spacing:-1px;cursor:pointer;-moz-user-select:none}
 .tree .tree-node .tree-button,.tree .tree-node .tree-label{vertical-align:top}
 .tree .tree-root-node h2{font-size:1.077em;color:#ccc}
@@ -182,21 +186,21 @@ body {
 .card_lst{*zoom:1}
 .card_lst:after,.card_lst .card .inner:after{display:block;clear:both;content:''}
 .card_lst li{float:left;margin:13px 0 0 13px;list-style:none;}
-.card_lst .card_w{position:relative;width:162px;height:202px}
-.card_lst .card{display:block;position:relative;width:160px;height:200px;border:1px solid #dfe0e3;border-radius:2px;background:#fff;text-decoration:none;cursor:pointer}
+.card_lst .card_w{position:relative;width:362px;height:502px}
+.card_lst .card{display:block;position:relative;width:360px;height:500px;border:1px solid #dfe0e3;border-radius:2px;background:#fff;text-decoration:none;cursor:pointer}
 .card_lst .card:hover{-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);border-color:#569eff}
 .card_lst .card,.card_lst .card .inner,.card_lst .card .info{display:block}
 .card_lst .card .inner{padding:10px;*zoom:1}
-.card_lst .card .thmb{display:inline-block;position:relative;width:140px;height:85px;line-height:84px;text-align:center;font-size:0}
+.card_lst .card .thmb{display:inline-block;position:relative;width:240px;height:185px;line-height:84px;text-align:center;font-size:0}
 .card_lst .card .thmb .mask{position:absolute;top:0;right:0;bottom:0;left:0;border:1px solid #000;opacity:0.08;filter:alpha(opacity=8)}
-.card_lst .card .thmb img{max-width:140px;max-height:85px;vertical-align:middle}
+.card_lst .card .thmb img{max-width:240px;max-height:185px;vertical-align:middle}
 .card_lst .card .info{margin-top:10px}
 .card_lst .card .info strong,.card_lst .card .info span{display:block}
 .card_lst .card .info strong{font-size:12px;line-height:19px;color:#000;/*letter-spacing:-1px*/}
 .card_lst .card .info span{margin-top:2px;line-height:18px;color:#888}
 
 .card_lst .info2{display:block;overflow:hidden;position:absolute;bottom:13px;left:1px}
-.card_lst .info2 .tit{overflow:hidden;float:left;max-width:80px;padding-left:9px;font-weight:normal;color:#888;white-space:nowrap;text-overflow:ellipsis}
+.card_lst .info2 .tit{overflow:hidden;float:left;max-width:180px;padding-left:9px;font-weight:normal;color:#888;white-space:nowrap;text-overflow:ellipsis}
 .card_lst .info2 em{float:right;padding-right:9px;font-family:tahoma;font-size:11px;color:#2e80ef}
 
 .card_lst .card .opinion{display:none;position:absolute;bottom:12px;right:9px}
@@ -204,3 +208,17 @@ body {
 .card_lst .card .opinion span{margin-right:3px;color:#888}
 .card_lst .card .opinion strong{font-family:tahoma;color:#ff5959}
 
+#divpop {
+	position:absolute;left:0px;top:0px;/*width:50%;height:30%;*/
+	z-index:10;background-color:#000000;opacity:.80;filter:alpha(opacity=80);
+	}
+
+.layer-text {
+	padding:30px;
+	display: inherit;
+}	
+
+.button-area {
+	padding:0 0 30px 0;
+}
+	
