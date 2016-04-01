@@ -14,7 +14,7 @@ $isLogin = 'false';
 			</div>
 			<div class='navbar-collapse collapse'>
 				<ul class='nav navbar-nav'>
-					<a href="main">
+					<a href="/roothaus/index.php/main">
 						<li style="color: #F1EBEB;padding: 15px 15px;font-size: 18px;line-height: 20px;">RootHaus</li>
 					</a>
 				</ul>
@@ -26,7 +26,7 @@ $isLogin = 'false';
 						<li class='active'><a href='#'>로그인</a></li>
 						<li class='active'><a href='#'>회원가입</a></li>
 					<?php }?>
-					<li class='active'><a href='estimate'>견적 관리</a></li>
+					<li class='active'><a href='/roothaus/index.php/estimate'>견적 관리</a></li>
 					<li class='active'><a href='#'>시공 현황</a></li>
 					<li class='active'><a href='#'>입주 체크리스트</a></li>
 					<li class='active'><a href='#'>사후 관리</a></li>

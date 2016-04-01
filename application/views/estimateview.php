@@ -235,6 +235,19 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 
 		<!-- 우측 리스트 영역 -->
 		<div class="right-contents-list">
+		
+			<div>
+				<br/>
+				<h3>현재 저장된 총 견적 : 1000 원</h3>
+				<a href="estimate/result">
+					<div class="btn-group">
+					  <button type="submit" class="btn btn-primary">
+					   	견적 내역 확인
+					  </button>
+					</div>				
+				</a>
+			</div>
+		
 			<div class="spot">
 				
 				<ul class="card_lst">			
