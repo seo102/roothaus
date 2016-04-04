@@ -23,10 +23,11 @@ $isLogin = 'false';
 				        <li class='active'><a href='#'>로그아웃</a></li>
 				        <li class='active'><a href='#'>마이메뉴</a></li>
 					<?php } else { ?>
-						<li class='active'><a href='#'>로그인</a></li>
-						<li class='active'><a href='#'>회원가입</a></li>
+						<li class='active'><a href='#'>Login</a></li>
+						<li class='active'><a href='#'>Join</a></li>
 					<?php }?>
 					<li class='active'><a href='/roothaus/index.php/estimate'>견적 관리</a></li>
+					<li class='active'><a href='/roothaus/index.php/survey'>설문조사</a></li>
 					<li class='active'><a href='#'>시공 현황</a></li>
 					<li class='active'><a href='#'>입주 체크리스트</a></li>
 					<li class='active'><a href='#'>사후 관리</a></li>
