@@ -26,18 +26,30 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 		
 		
 		<br/><br/><br/>
+		
 			<div class="spot">
-				<h3><?php echo $type?></h3>
-				<h4>토지 면적 입력</h4> <input type="text" />
-				<h4>건축 바닥 면적 입력</h4> <input type="text" />
-				<h4>층수 입력</h4> <input type="text" />
-				
-		<br/><br/><br/>
-				<div class="btn-group">
-				  <button type="submit" class="btn btn-primary">
-				    기본 정보 저장
-				  </button>
+				<div class="" style="text-align:left;padding: 0 0 0 10%;">
+				본 예상견적서는 루트 건축물에 도움이 되고자 만든 것입니다.<br/>
+				귀하의 주택의 참고자료 일뿐 정확한 견적이 아니며 정확한 견적은 설계미팅이 끝난 후에 결정됨을 알려드립니다.<br/>
+				최대한 자세하게 그리고 신중하게 선택하시면 좋은 참고자료가 될 수 있습니다.<br/>
 				</div>
+			
+				<div class="" style="text-align:left;padding: 0 0 0 10%;">
+					<h3>예상면적( 공통사항- 면적을 통하여 기본적인 견적이 결정됩니다. )</h3>
+					<h4>전체 평수</h4> <input type="text" /> * 평수를 입력하면 아래의 면적은 자동으로 입력됩니다. ( 아래값은 미리설정 또는 상담자 입력) 
+					<h4>지붕 면적</h4> <input type="text" />
+					<h4>외부 면적</h4> <input type="text" />
+					<h4>내부 면적</h4> <input type="text" />
+					<h4>바닥 면적</h4> <input type="text" />
+					
+					<br/><br/><br/>
+					<div class="btn-group">
+					  <button type="submit" class="btn btn-primary">
+					    기본 정보 저장
+					  </button>
+					</div>
+				</div>
+								
 			</div>
 			
 		</div>

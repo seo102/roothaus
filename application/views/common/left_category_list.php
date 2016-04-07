@@ -11,12 +11,42 @@
 						<a href="/roothaus/index.php/estimate/createEst/0/basic" class="tree-label"
 							unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">기본 정보</a>
 					</h2>
+				</li>
+				
+				<li class="tree-node tree-root-node tree-data-14594054317963193824"
+					id="category_11">
+					<h2 class="tree-has-child">
+						<a href="#" class="tree-label"
+							unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">공통 정보</a>
+					</h2>
+					<ul id="sub_tree" style="zoom: 1;">
+						<li
+							class="tree-node tree-collapsed tree-data-14594054317992124335"
+							id="category_52411">
+							<div class="">
+								<span class="tree-button"></span><a
+									href="/roothaus/index.php/estimate/createEst" class="tree-label"
+									unselectable="on"
+									onclick="">주택형태</a>
+							</div>
+						</li>
+						<li
+							class="tree-node tree-collapsed tree-data-14594054317992124335"
+							id="category_5241">
+							<div class="">
+								<span class="tree-button"></span><a
+									href="/roothaus/index.php/estimate/createEst" class="tree-label"
+									unselectable="on"
+									onclick="">주택위치</a>
+							</div>
+						</li>
+					</ul>
 				</li>		
 
 				<li class="tree-node tree-root-node tree-data-14594054317989824496"
 					id="category_456">
 					<h2 class="tree-has-child">
-						<a href="/roothaus/index.php/estimate/createEst" class="tree-label"
+						<a href="#" class="tree-label"
 							unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">부가 정보</a>
 					</h2>
 					<ul id="sub_tree" style="zoom: 1;">
