@@ -25,7 +25,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 				  </button>
 				</div>				
 			</a>
-			<a href="estimate/createEst">
+			<a href="estimate/createEst/0/basic">
 				<div class="btn-group">
 				  <button type="submit" class="btn btn-primary">
 				   	신규 견적 생성

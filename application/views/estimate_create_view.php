@@ -26,7 +26,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 			<div>
 				<br/>	
 				<h3>현재 저장된 총 견적 : 1000 원</h3>
-				<a href="./result">
+				<a href="/roothaus/index.php/estimate/result/0">
 					<div class="btn-group">
 					  <button type="submit" class="btn btn-primary">
 					   	견적 내역 확인
