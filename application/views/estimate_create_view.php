@@ -19,8 +19,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 		<?php include 'common/left_category_list.php';?>		
 		<!-- // 좌측 카테고리 영역 -->
 
-
-
+	
 		<!-- 우측 리스트 영역 -->
 		<div class="right-contents-list">
 		
@@ -40,233 +39,43 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 				
 				<ul class="card_lst">			
 				
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_1" onclick="confirm('product_id_1', 'A 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
+				<?php 
+				foreach($productList as $var=>$val) {
+				?>
+					<li style="display: list-item;">
+						<div class="card_w">
+							<span id="product_id_<?= $val->product_id?>" onclick="confirm('product_id_<?= $val->product_id?>', '<?= $val->product_name?>', event);" class="card">
+							<span class="inner">
+								<span class="thmb">
+									<span class="mask"></span>
+									<img src="<?= $val->image_url?>" width="240px" height="185px" class="_thumnail" alt="">
+								</span>
+								<span class="info">
+									<strong><?= $val->product_name?></strong><span alt="" title=""><?= $val->desc?></span>
+								</span>
+								<span class="star-rating">
+									<span style="width:<?= $val->grade?>%;"></span>
+								</span>
+								<span class="opinion on"><span class="tit">등급</span><strong><?= $val->grade?> / 100</strong></span>
+							</span>		
 							</span>
-							<span class="info">
-								<strong>A 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
+							<span class="info2">
+								<strong class="tit">								
+									<a href="#"><?= $val->price?>원 (<?= $val->price_standard?>)</a>								
+								</strong>
 							</span>
-							<span class="star-rating">
-								<span style="width:100%;"></span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</span>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-				
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_2" onclick="confirm('product_id_2', 'B 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
-							</span>
-							<span class="info">
-								<strong>B 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
-							</span>
-							<span class="star-rating">
-								<span style="width:70%;"></span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</a>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_3" onclick="confirm('product_id_3', 'C 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
-							</span>
-							<span class="info">
-								<strong>C 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
-							</span>
-							<span class="star-rating">
-								<span style="width:50%;"></span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</a>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-				
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_4" onclick="confirm('product_id_4', 'D 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
-							</span>
-							<span class="info">
-								<strong>D 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</a>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_5" onclick="confirm('product_id_5', 'E 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
-							</span>
-							<span class="info">
-								<strong>E 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</a>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-				
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_6" onclick="confirm('product_id_6', 'F 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
-							</span>
-							<span class="info">
-								<strong>F 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</a>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_7" onclick="confirm('product_id_7', 'G 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
-							</span>
-							<span class="info">
-								<strong>G 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</a>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-				
-				<li style="display: list-item;">
-					<div class="card_w">
-						<span id="product_id_8" onclick="confirm('product_id_8', 'H 스타코', event);" class="card">
-						<span class="inner">
-							<span class="thmb">
-								<span class="mask"></span>
-								<img src="http://ncc.phinf.naver.net/20151124_143/14483431805446ddCg_JPEG/th.jpg?type=f140_85" width="240px" height="185px" class="_thumnail" alt="">
-							</span>
-							<span class="info">
-								<strong>H 스타코</strong><span alt="" title="">좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다. 좋은 스타코 자재 입니다.</span>
-							</span>
-							<span class="opinion on"><span class="tit">등급</span><strong>상</strong></span>
-						</span>		
-						</a>
-						<span class="info2">
-							<strong class="tit">
-							
-							
-							<a href="/author_contents_list.nhn?acknowledgeId=au1172" onclick="clickcr(this,'rst_cdv.author','','',event);">250만원 (개당)</a>
-							
-							
-							
-							</strong>
-						</span>
-					</div>
-				</li>
-							
+						</div>
+					</li>
+				 	
+			 	<?php
+				}
+				?>
+											
 				</ul>
-			</div>
 			
 		</div>
 		<!-- // 우측 리스트 영역 -->
+
 		
 		<!-- 레이어 내용 -->
 		<div id="divpop" style="display:none;">

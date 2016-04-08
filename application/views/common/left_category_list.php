@@ -21,12 +21,12 @@
 		<ul id="sub_tree" style="zoom: 1;">
 	<?php
 	foreach($categoryList as $var=>$val) {	
-		if ($val->type == 'common') {
+		if ($val->type == 'common') { // 공통인 카테고리만 노출
 			?>
 			<li
 		class="tree-node tree-collapsed tree-data-14594054317992124335"
 		id="category_<?= $val->category_id?>">
-				<div class="">
+				<div class="tree-has-child">
 				<span class="tree-button"></span><a
 					href="/roothaus/index.php/estimate/createEst/0/<?= $val->category_id?>" class="tree-label"
 					unselectable="on"
@@ -48,25 +48,24 @@
 		</h2>
 		<ul id="sub_tree" style="zoom: 1;">
 	
-<?php 
-//print_r($categoryList);
-foreach($categoryList as $var=>$val) {	
-	if ($val->type == 'option') {
-		?>
-			 <li
-				class="tree-node tree-collapsed tree-data-14594054317995404466"
-				id="category_<?= $val->category_id?>">
-				<div class="tree-has-child">
-					<button class="tree-button">열기</button>
-					<a href="/roothaus/index.php/estimate/createEst/0/<?= $val->category_id?>" class="tree-label"
-						unselectable="on"
-						onclick=""><?= $val->category_name?></a>
-				</div>
-			</li>	
- 		<?php
+	<?php 
+	foreach($categoryList as $var=>$val) {	
+		if ($val->type == 'option') { // 옵션인 카테고리만 노출
+			?>
+				 <li
+					class="tree-node tree-collapsed tree-data-14594054317995404466"
+					id="category_<?= $val->category_id?>">
+					<div class="tree-has-child">
+						<button class="tree-button">열기</button>
+						<a href="/roothaus/index.php/estimate/createEst/0/<?= $val->category_id?>" class="tree-label"
+							unselectable="on"
+							onclick=""><?= $val->category_name?></a>
+					</div>
+				</li>	
+	 		<?php
+		}
 	}
-}
-?>
+	?>
 		</ul>
 	</li>
 	

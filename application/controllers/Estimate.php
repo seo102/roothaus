@@ -23,8 +23,14 @@ class Estimate extends CI_Controller {
 		$data = array(
 			'type' => $infoType
 		);
+		
+		// 좌측 카테고리 데이터 가져오기
 		$this->load->model('Category_model', '', TRUE); // 모델 호출
 		$data['categoryList'] = $this->Category_model->get_category_list_by_depth("1");
+		
+		// 우측 컨텐츠 데이터 가져오기
+		$this->load->model('Product_model', '', TRUE); // 모델 호출
+		$data['productList'] = $this->Product_model->get_product_list_by_category($infoType);
 		
 		
 		// 기본 정보 입력인 경우 파라미터 있음

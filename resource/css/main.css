@@ -191,13 +191,13 @@ body {
 .card_lst .card:hover{-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);border-color:#569eff}
 .card_lst .card,.card_lst .card .inner,.card_lst .card .info{display:block}
 .card_lst .card .inner{padding:10px;*zoom:1}
-.card_lst .card .thmb{display:inline-block;position:relative;width:140px;height:85px;line-height:84px;text-align:center;font-size:0}
+.card_lst .card .thmb{display:inline-block;position:relative;width:200px;height:120px;line-height:84px;text-align:center;font-size:0}
 .card_lst .card .thmb .mask{position:absolute;top:0;right:0;bottom:0;left:0;border:1px solid #000;opacity:0.08;filter:alpha(opacity=8)}
-.card_lst .card .thmb img{max-width:140px;max-height:85px;vertical-align:middle}
+.card_lst .card .thmb img{max-width:200px;max-height:120px;vertical-align:middle}
 .card_lst .card .info{margin-top:10px}
 .card_lst .card .info strong,.card_lst .card .info span{display:block}
 .card_lst .card .info strong{font-size:12px;line-height:19px;color:#000;/*letter-spacing:-1px*/}
-.card_lst .card .info span{margin-top:2px;line-height:18px;color:#888}
+.card_lst .card .info span{margin:2px 0 6px 0;;line-height:18px;color:#888}
 
 .card_lst .info2{display:block;overflow:hidden;position:absolute;bottom:13px;left:1px}
 .card_lst .info2 .tit{overflow:hidden;float:left;max-width:180px;padding-left:9px;font-weight:normal;color:#888;white-space:nowrap;text-overflow:ellipsis}
