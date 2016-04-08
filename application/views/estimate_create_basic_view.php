@@ -28,6 +28,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 		<br/><br/><br/>
 		
 			<div class="spot">
+			
 				<div class="" style="text-align:left;padding: 0 0 0 10%;">
 				본 예상견적서는 루트 건축물에 도움이 되고자 만든 것입니다.<br/>
 				귀하의 주택의 참고자료 일뿐 정확한 견적이 아니며 정확한 견적은 설계미팅이 끝난 후에 결정됨을 알려드립니다.<br/>

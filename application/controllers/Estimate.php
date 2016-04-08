@@ -11,7 +11,7 @@ class Estimate extends CI_Controller {
 	
 	// 견적 생성 / 조회 / 수정
 	public function createEst($estimateId, $infoType)
-	{
+	{				
 		/*
 		if ($estimateId == null) {
 			//echo $estimateId;
@@ -23,6 +23,9 @@ class Estimate extends CI_Controller {
 		$data = array(
 			'type' => $infoType
 		);
+		$this->load->model('Category_model', '', TRUE); // 모델 호출
+		$data['categoryList'] = $this->Category_model->get_category_list_by_depth("1");
+		
 		
 		// 기본 정보 입력인 경우 파라미터 있음
 		if ($infoType != null && $infoType == 'basic') {

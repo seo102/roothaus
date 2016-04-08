@@ -2,7 +2,78 @@
 ?>
 
 
+<div class="left-category_list">
+	<ul id="category" class="tree" style="zoom: 1;">
+	<li class="tree-node tree-root-node tree-data-14594054317963193824"
+		id="basic">
+		<h2 class="tree-has-child">
+			<a href="/roothaus/index.php/estimate/createEst/0/basic" class="tree-label"
+				unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">기본 정보</a>
+		</h2>
+	</li>
+	
+	<li class="tree-node tree-root-node tree-data-14594054317963193824"
+		id="category_11">
+		<h2 class="tree-has-child">
+			<a href="#" class="tree-label"
+				unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">공통 정보</a>
+		</h2>
+		<ul id="sub_tree" style="zoom: 1;">
+	<?php
+	foreach($categoryList as $var=>$val) {	
+		if ($val->type == 'common') {
+			?>
+			<li
+		class="tree-node tree-collapsed tree-data-14594054317992124335"
+		id="category_<?= $val->category_id?>">
+				<div class="">
+				<span class="tree-button"></span><a
+					href="/roothaus/index.php/estimate/createEst/0/<?= $val->category_id?>" class="tree-label"
+					unselectable="on"
+					onclick=""><?= $val->category_name?></a>
+					</div>
+			</li>	 
+	 		<?php
+		}	
+	}
+	?>
+		</ul>
+	</li>
+	
+	<li class="tree-node tree-root-node tree-data-14594054317989824496"
+		id="category_456">
+		<h2 class="tree-has-child">
+			<a href="#" class="tree-label"
+				unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">부가 정보</a>
+		</h2>
+		<ul id="sub_tree" style="zoom: 1;">
+	
+<?php 
+//print_r($categoryList);
+foreach($categoryList as $var=>$val) {	
+	if ($val->type == 'option') {
+		?>
+			 <li
+				class="tree-node tree-collapsed tree-data-14594054317995404466"
+				id="category_<?= $val->category_id?>">
+				<div class="tree-has-child">
+					<button class="tree-button">열기</button>
+					<a href="/roothaus/index.php/estimate/createEst/0/<?= $val->category_id?>" class="tree-label"
+						unselectable="on"
+						onclick=""><?= $val->category_name?></a>
+				</div>
+			</li>	
+ 		<?php
+	}
+}
+?>
+		</ul>
+	</li>
+	
+	</ul>
+</div>
 
+<!-- 
 <div class="left-category_list">
 			<ul id="category" class="tree" style="zoom: 1;">
 				<li class="tree-node tree-root-node tree-data-14594054317963193824"
@@ -235,7 +306,9 @@
 			</ul>
 
 		</div>
-		
+		 -->
+		 
+		 
 <script>
 var estType = '<?php echo $type;?>';
 if (estType != '') {

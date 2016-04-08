@@ -25,7 +25,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 		<div class="right-contents-list">
 		
 			<div>
-				<br/>
+				<br/>	
 				<h3>현재 저장된 총 견적 : 1000 원</h3>
 				<a href="./result">
 					<div class="btn-group">
