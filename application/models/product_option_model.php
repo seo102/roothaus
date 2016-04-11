@@ -1,25 +1,18 @@
 <?php
 
-class Product_model extends CI_Model {
+class Product_option_model extends CI_Model {
 	
-	var $product_id = '';
-	var $category_id = '';
+	var $option_id = '';
 	var $option_type_id = '';
-	var $product_name = '';
-	var $image_url = '';
-	var $grade = '';
-	var $desc = '';
-	var $price = '';
-	var $price_standard = '';
-	var $option_enable = '';
-	var $enable = '';
+	var $option_type = '';
+	var $option_name = '';
 	
 			
 	function __construct() {
 		parent::__construct();
 	}
 	
-	function get_product_list_by_category($queryString)
+	function get_product_option_list_by_type($queryString)
 	{
 		/*
 		$query = $this->db->get('user', 10);
@@ -29,7 +22,7 @@ class Product_model extends CI_Model {
 		$this->db->query($sql, array(3, 'live', 'Rick'));
 		*/
 		//$sql = "select * from est_category where depth = '".$this->db->escape_str($queryString)."'";
-		$sql = "select * from est_product where enable = 'Y' and category_id = '".$this->db->escape_str($queryString)."' ";
+		$sql = "select * from est_product_option where option_type_id = '".$this->db->escape_str($queryString)."' order by option_id";
 		
 		$query = $this->db->query($sql);
 		return $query->result();

@@ -44,14 +44,14 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 				?>
 					<li style="display: list-item;">
 						<div class="card_w">
-							<span id="product_id_<?= $val->product_id?>" onclick="confirm('product_id_<?= $val->product_id?>', '<?= $val->product_name?>', event);" class="card">
+							<span id="product_id_<?= $val->product_id?>" onclick="confirm('product_id_<?= $val->product_id?>', '<?= $val->product_name?>', event, '<?= $val->option_type_id?>');" class="card">
 							<span class="inner">
 								<span class="thmb">
 									<span class="mask"></span>
 									<img src="<?= $val->image_url?>" width="240px" height="185px" class="_thumnail" alt="">
 								</span>
 								<span class="info">
-									<strong><?= $val->product_name?></strong><span alt="" title=""><?= $val->desc?></span>
+									<strong><?= $val->product_name?></strong><span alt="" title="<?=$val->desc?>"><?= mb_strimwidth($val->desc, 0, 270, "...", "UTF-8");?></span>
 								</span>
 								<span class="star-rating">
 									<span style="width:<?= $val->grade?>%;"></span>
@@ -76,11 +76,12 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 		</div>
 		<!-- // 우측 리스트 영역 -->
 
+
 		
 		<!-- 레이어 내용 -->
 		<div id="divpop" style="display:none;">
 			<div>
-				<span class="layer-text"><span id="productName"></span>을(를) 선택합니다. 추가되는 제품 갯수를 선택해주세요.</span>	
+				<span class="layer-text"><span id="productName"></span>을(를) 선택합니다. 제품 갯수를 선택해주세요.</span>	
 				
 				<div class="button-area">
 					<div class="btn-group">
@@ -130,16 +131,34 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 			document.getElementById(div).style.display='none';
 		}
 
-		function confirm(element_id, element_name, event) {
-			var lpos = event.clientX + document.body.scrollLeft;
-			var tpos = event.clientY + document.body.scrollTop;
-			console.log(document.body.style.width);
+		function confirm(element_id, element_name, event, option_id) {
+			if (option_id == 0) {
+				//return false;
+			}
+			// 제품의 옵션 데이터 레이어 ajax call 
+			var linkUrl = '/roothaus/index.php/estimate/getProductOption/' + option_id;
 
-			var layerObj = document.getElementById('divpop');
-			layerObj.style.top = tpos + "px";
-			layerObj.style.left = lpos / 1.5 + "px";			
-			document.getElementById('productName').innerHTML = element_name;
-			layerObj.style.display='block';		
+			$.ajax({
+		        type: 'POST',
+		        url: linkUrl,
+		        dataType: 'text',
+		        timeout: 5000,
+		        error: function () {
+		            //alert('error');
+		        },
+		        success: function (data) {
+					document.getElementById('divpop').innerHTML = data;
+
+					var lpos = event.clientX + document.body.scrollLeft;
+					var tpos = event.clientY + document.body.scrollTop;
+
+					var layerObj = document.getElementById('divpop');
+					layerObj.style.top = tpos + "px";
+					layerObj.style.left = lpos / 1.5 + "px";			
+					document.getElementById('productName').innerHTML = element_name;
+					layerObj.style.display='block';
+		       }
+		    });		
 		}
 		</script>
 
@@ -147,6 +166,28 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 		<br /> <br /> <br /> <br />	
 		<?php include 'common/footer.php';?>
 	</div>
+	
+	
+	<script>
+function getAjaxCall(type) {
+	
+	var linkUrl = '/roothaus/index.php/estimate/getProductOption/' + type;
+
+	$.ajax({
+        type: 'POST',
+        url: linkUrl,
+        dataType: 'text',
+        timeout: 5000,
+        error: function () {
+            //alert('error');
+        },
+        success: function (data) {
+			document.getElementById('divpop').innerHTML = data;
+       }
+    });
+}
+</script>
+
 
 </body>
 </html>

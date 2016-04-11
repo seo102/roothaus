@@ -74,4 +74,13 @@ class Estimate extends CI_Controller {
 		
 		$this->load->view('estimate_result_view', $this->data);
 	}
+	
+	// 제품 옵션 가져오기
+	public function getProductOption($optionId) {
+		$this->load->model('Product_option_model', '', TRUE); // 모델 호출
+		$this->data['productOptionList'] = $this->Product_option_model->get_product_option_list_by_type($optionId);
+		$this->data['optionTypeId'] = $optionId;
+		
+		$this->load->view('product_option_view', $this->data);
+	}
 }
