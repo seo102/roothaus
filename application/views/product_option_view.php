@@ -13,6 +13,7 @@
 			<div class="zcol-lg-6">
 			    <div class="zinput-group">
 			      <span class="zinput-group-addon">
+			      
 			      <?php 
 					foreach($productOptionList as $var => $val) {
 						if ($val->option_type_id != '0') {

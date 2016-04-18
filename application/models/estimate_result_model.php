@@ -32,11 +32,17 @@ class Estimate_result_model extends CI_Model {
 		parent::__construct();
 	}
 	
+	function get_estimate_result_List($createId) {
+		$sql = "SELECT * FROM est_estimate_info WHERE create_id = '".$createId."'" ;
+		$query = $this->db->query($sql);
+		return $query->result();
+	}
+	
 	// 견적 정보 (기본정보) 가져옴
 	function get_estimate_result_basic_info($estimateId, $createId)	{
 		$sql = "SELECT * FROM est_estimate_info WHERE estimate_id = '".$estimateId."' and create_id = '".$createId."'" ;
 		$query = $this->db->query($sql);
-		return $query->result();
+		return $query->row();
 	}
 	
 	// 견적 정보 (제품정보) 가져옴

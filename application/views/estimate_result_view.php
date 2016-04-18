@@ -20,17 +20,28 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 		<!-- // 좌측 카테고리 영역 -->
 
 
-
-
 		<!-- 우측 리스트 영역 -->
 		<div class="right-contents-list">
 		
 			<div>
 				<br/>
-				<h3>현재 저장된 총 견적 : 1000 원</h3>
+				<h3>견적 제목 : <?= $estimateResultBasic->title?></h3>
 				<div class="btn-group">
-				  <?php print_r($data)?>
-				  <h4>지붕 300000 원</h4>
+	<!-- 
+	<pre>
+	  <?php print_r($estimateResultProduct)?>
+	</pre>
+	 -->
+				<?php
+				$totalAmount = 0; // 전체 견적 금액
+				foreach ($estimateResultProduct as $var) {
+					$totalAmount = $totalAmount + $var->price; 
+				?>
+					<h4><?= $var->category_name?> : <?= $var->product_name?> (가격 : <?= $var->price?>)</h4>
+				<?php 					
+				}
+				?>
+					<h3>전체금액 : <?= $totalAmount?>원</h3>
 				</div>				
 			</div>
 		

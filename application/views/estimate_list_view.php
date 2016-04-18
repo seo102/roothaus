@@ -18,11 +18,15 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 			<div>
 				<br/>
 				<h3>xxx 님이 저장한 견적 리스트 입니다.</h3>
+								
+				<?php
+				foreach ($estimateResultList as $var) {
+					?>
+					<a href="/roothaus/index.php/estimate/result/<?= $var->estimate_id?>"><h6>견적제목 : <?= $var->title?></h6></a>
+					<?php 
+				}
+				?>
 				
-				<a href="/roothaus/index.php/estimate/createEst"><h6>루트 1호 견적 (A타입)</h6></a>
-				<a href="/roothaus/index.php/estimate/createEst"><h6>루트 1호 견적 (B타입)</h6></a>
-				<a href="/roothaus/index.php/estimate/createEst"><h6>루트 2호 견적 (A타입)</h6></a>
-				<a href="/roothaus/index.php/estimate/createEst"><h6>루트 2호 견적 (B타입)</h6></a>
 			</div>
 
 

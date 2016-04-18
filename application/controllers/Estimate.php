@@ -75,7 +75,12 @@ class Estimate extends CI_Controller {
 	// 견적 리스트 조회
 	public function estList()
 	{
-		$this->load->view('estimate_list_view');
+		$createId = "admin"; // 세션에 저장되어 있는 로그인 한 아이디 값을 넣어야 함 //asdf
+		
+		$this->load->model('Estimate_result_model', '', TRUE);
+		$this->data['estimateResultList'] = $this->Estimate_result_model->get_estimate_result_List($createId);
+		
+		$this->load->view('estimate_list_view', $this->data);
 	}
 	
 	// 견적 결과
@@ -84,12 +89,13 @@ class Estimate extends CI_Controller {
 		if ($estimateId == null) {
 			//견적서 아이디를 파라미터로 받음.
 		}		
+		
 		$createId = "admin"; // 세션에 저장되어 있는 로그인 한 아이디 값을 넣어야 함 //asdf
 		
 		// 좌측 카테고리 데이터 가져오기
-		$this->getLeftCategoryData();
+		$this->getLeftCategoryData($estimateId);
 	
-		$this->load->model('Estimate_result_model', '', TRUE);
+		$this->load->model('Estimate_result_model', '', TRUE);		
 		$this->data['estimateResultBasic'] = $this->Estimate_result_model->get_estimate_result_basic_info($estimateId, $createId);
 		$this->data['estimateResultProduct'] = $this->Estimate_result_model->get_estimate_result_product_info($estimateId);
 		
@@ -99,7 +105,7 @@ class Estimate extends CI_Controller {
 	// 제품 옵션 가져오기
 	public function getProductOption($optionId, $productId, $estimateId, $categoryId, $isSelectedProduct) {
 		$this->load->model('Product_option_model', '', TRUE); // 모델 호출
-		$this->data['productOptionList'] = $this->Product_option_model->get_product_option_list_by_type($optionId,$estimateId);
+		$this->data['productOptionList'] = $this->Product_option_model->get_product_option_list_by_type($optionId, $estimateId, $productId);
 		$this->data['optionTypeId'] = $optionId;
 		$this->data['productId'] = $productId;
 		$this->data['estimateId'] = $estimateId;
