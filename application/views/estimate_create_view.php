@@ -22,11 +22,36 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 	
 		<!-- 우측 리스트 영역 -->
 		<div class="right-contents-list">
+			<br/>
+			<div style="background-color: blue;">
+			<?php 
+			    $arrSize = sizeof($categoryList);
+				if ($categoryId == 'basic') {
+				?>					
+					<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><span>다음으로</span></a>
+				<?php 
+				} else {
+					if ($categoryByOrder[$categoryId] > 1) {
+				?>
+					<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]-2]->category_id?>"><span>이전으로</span></a>&nbsp;&nbsp;&nbsp;
+					<?php 
+					} else {
+					?>
+						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/basic"><span>이전으로</span></a>&nbsp;&nbsp;&nbsp;
+					<?php
+					}					
+					if ($categoryByOrder[$categoryId] < $arrSize) {?>
+						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]]->category_id?>"><span>다음으로</span></a>
+				<?php
+					}
+				}
+			?>
+			</div>
 		
 			<div>
 				<br/>	
 				<h3>현재 저장된 총 견적 : 1000 원</h3>
-				<a href="/roothaus/index.php/estimate/result/0">
+				<a href="/roothaus/index.php/estimate/result/<?= $estimateId?>">
 					<div class="btn-group">
 					  <button type="submit" class="btn btn-primary">
 					   	견적 내역 확인
@@ -40,11 +65,18 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 				<ul class="card_lst">			
 				
 				<?php 
+				$isSelectedProduct = 0;
 				foreach($productList as $var=>$val) {
+					if($val->selected_product == $val->product_id) {
+						// 선택한 제품인 경우 선택됨 표시, update나 delete 가능함
+						$isSelectedProduct = 1;
+					} else {
+						$isSelectedProduct = 0;
+					}
 				?>
 					<li style="display: list-item;">
 						<div class="card_w">
-							<span id="product_id_<?= $val->product_id?>" onclick="confirm('product_id_<?= $val->product_id?>', '<?= $val->product_name?>', event, '<?= $val->option_type_id?>');" class="card">
+							<span id="product_id_<?= $val->product_id?>" onclick="confirm('product_id_<?= $val->product_id?>', '<?= $val->product_name?>', event, '<?= $val->option_type_id?>', '<?= $val->product_id?>', '<?= $estimateId?>', '<?= $categoryId ?>','<?= $isSelectedProduct?>');" class="card<?if($isSelectedProduct){?> selected<?}?>">
 							<span class="inner">
 								<span class="thmb">
 									<span class="mask"></span>
@@ -90,15 +122,6 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 					  </button>
 					  <ul class="dropdown-menu" style="line-height:20px;">
 					    <li onclick="document.getElementById('countObj').innerHTML = '1개';">1개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '2개';">2개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '3개';">3개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '4개';">4개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '5개';">5개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '6개';">6개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '7개';">7개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '8개';">8개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '9개';">9개</li>
-					    <li onclick="document.getElementById('countObj').innerHTML = '10개';">10개</li>
 					  </ul>
 					</div>
 					<br/><br/>
@@ -131,12 +154,12 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 			document.getElementById(div).style.display='none';
 		}
 
-		function confirm(element_id, element_name, event, option_id) {
+		function confirm(element_id, element_name, event, option_id, product_id, estimate_id, category_id, is_selected_product) {
 			if (option_id == 0) {
 				//return false;
 			}
 			// 제품의 옵션 데이터 레이어 ajax call 
-			var linkUrl = '/roothaus/index.php/estimate/getProductOption/' + option_id;
+			var linkUrl = '/roothaus/index.php/estimate/getProductOption/' + option_id + '/' + product_id + '/' + estimate_id + '/' + category_id + '/' + is_selected_product;
 
 			$.ajax({
 		        type: 'POST',

@@ -29,14 +29,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 				<br/>
 				<h3>현재 저장된 총 견적 : 1000 원</h3>
 				<div class="btn-group">
-				  <h4>지붕 300000 원</h4>
-				  <h4>지붕 300000 원</h4>
-				  <h4>지붕 300000 원</h4>
-				  <h4>지붕 300000 원</h4>
-				  <h4>지붕 300000 원</h4>
-				  <h4>지붕 300000 원</h4>
-				  <h4>지붕 300000 원</h4>
-				  <h4>지붕 300000 원</h4>
+				  <?php print_r($data)?>
 				  <h4>지붕 300000 원</h4>
 				</div>				
 			</div>

@@ -5,9 +5,9 @@
 <div class="left-category_list">
 	<ul id="category" class="tree" style="zoom: 1;">
 	<li class="tree-node tree-root-node tree-data-14594054317963193824"
-		id="basic">
+		id="category_basic">
 		<h2 class="tree-has-child">
-			<a href="/roothaus/index.php/estimate/createEst/0/basic" class="tree-label"
+			<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/basic" class="tree-label"
 				unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">기본 정보</a>
 		</h2>
 	</li>
@@ -28,7 +28,7 @@
 		id="category_<?= $val->category_id?>">
 				<div class="tree-has-child">
 				<span class="tree-button"></span><a
-					href="/roothaus/index.php/estimate/createEst/0/<?= $val->category_id?>" class="tree-label"
+					href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $val->category_id?>" class="tree-label"
 					unselectable="on"
 					onclick=""><?= $val->category_name?></a>
 					</div>
@@ -57,7 +57,7 @@
 					id="category_<?= $val->category_id?>">
 					<div class="tree-has-child">
 						<button class="tree-button">열기</button>
-						<a href="/roothaus/index.php/estimate/createEst/0/<?= $val->category_id?>" class="tree-label"
+						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $val->category_id?>" class="tree-label"
 							unselectable="on"
 							onclick=""><?= $val->category_name?></a>
 					</div>
@@ -78,7 +78,7 @@
 				<li class="tree-node tree-root-node tree-data-14594054317963193824"
 					id="basic">
 					<h2 class="tree-has-child">
-						<a href="/roothaus/index.php/estimate/createEst/0/basic" class="tree-label"
+						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/basic" class="tree-label"
 							unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">기본 정보</a>
 					</h2>
 				</li>
@@ -310,7 +310,9 @@
 		 
 <script>
 var estType = '<?php echo $type;?>';
-if (estType != '') {
-	$("#" + estType + " > h2").addClass("tree-selected");
+if (estType == 'basic') {
+	$("#category_" + estType + " > h2").addClass("tree-selected");
+} else {
+	$("#category_" + estType + " > div").addClass("tree-selected");
 }
 </script>
