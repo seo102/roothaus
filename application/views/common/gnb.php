@@ -26,7 +26,7 @@ $isLogin = 'false';
 						<li class='active'><a href='#'>Login</a></li>
 						<li class='active'><a href='#'>Join</a></li>
 					<?php }?>
-					<li class='active'><a href='/roothaus/index.php/estimate'>견적 관리</a></li>
+					<li class='active'><a href='/roothaus/index.php/estimateMain'>견적 관리</a></li>
 					<li class='active'><a href='/roothaus/index.php/survey'>설문조사</a></li>
 					<li class='active'><a href='#'>시공 현황</a></li>
 					<li class='active'><a href='#'>입주 체크리스트</a></li>

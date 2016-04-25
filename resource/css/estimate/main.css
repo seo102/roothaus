@@ -1,0 +1,64 @@
+/*!
+ * IE10 viewport hack for Surface/desktop Windows 8 bug
+ * Copyright 2014-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/*
+ * See the Getting Started docs for more information:
+ * http://getbootstrap.com/getting-started/#support-ie10-width
+ */
+@-webkit-viewport { width: device-width; }
+@-moz-viewport    { width: device-width; }
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+
+body {font-family:'µ¸¿ò',dotum,Helvetica,sans-serif;text-align:center;}
+.category {margin:25px 0 25px 0;}
+.category span {margin:0 16px 0 16px;}
+.category-selected {font-weight: bold;}
+.content {clear:both;margin:0 auto;width:1050px;}
+.product {margin:0 5px 50px 5px;float:left;width:250px;padding:10px;}
+.basic-info {margin:0 5px 50px 5px;float:left;width:250px;padding:10px;}
+.basic-input-area {height:72px;}
+.selected {border:2px solid red;padding:10px;}
+.product_title {height:20px;float:left;margin:0 0 10px 0;font-weight: bolder;font-size: large;}
+.product_desc {height:200px;clear:both;text-align:left;margin:0 0 10px 0;}
+.product_option {clear:both;text-align:left;margin:0 0 5px 0;}
+.category_paging {clear:both;padding:30px 0 30px 0;}
+.title {text-align:left;height:130px;margin: 20px 0 0 0;}
+.basic-input {background-color: #D8D8D8;}
+.basic-need-input {background-color: #CC6161;}    
+
+.star-rating { width:220px; }
+.star-rating,.star-rating span { display:inline-block; overflow:hidden; height:10px; background:url(/roothaus/resource/image/common/grade.png)no-repeat; }
+.star-rating span{ background-position:left bottom; line-height:0; vertical-align:top;float:left; }
+
+#divpop {
+	position:absolute;left:0px;top:0px;/*width:50%;height:30%;*/
+	z-index:10;background-color:#000000;opacity:.97;filter:alpha(opacity=97);color: #A5A1A1;
+	}
+
+.layer-text {
+	padding:30px;
+	display: inherit;
+}	
+
+.button-area {
+	padding:0 0 30px 0;
+}
+
+.result_list th {text-align:center;background:#F9F9F9;border-top:2px solid #373737;height:36px;border:none;border-bottom:1px solid #D7D7D7;color:#373737; !important}	
+.result_list{overflow:hidden;position:relative;margin:40px 0 67px}
+.result_list table{width:100%;border:none;border-collapse:collapse}
+.result_list_odd{background-color: #E6C6E5;}
+.result_list td{height:36px;border:none;border-bottom:1px solid #D7D7D7;color:#373737;text-align:left}
+.result_list th span,.result_list td em{display:block;font-family:'MS Serif','New York',serif;font-style:normal !important;text-align:center}
+.result_list td span{position:relative;top:1px}
+.result_list p{margin:11px 0 0;color:#A1A1A1;text-align:left}
+.result_list p span{margin:0 0 0 2px;color:#D7D7D7}
+.result_list p a{color:#000CC0}
+.result-sum {border:1px solid #F7B4B4;background-color: #F7B4B4;font-weight: bold;}
+ 
+
