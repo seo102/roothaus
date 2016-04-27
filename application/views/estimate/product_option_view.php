@@ -35,7 +35,7 @@
 			<br/><br/>
 			<?php if ($useCount == 'Y') {?>
 			<div>
-				제품 갯수 선택 : <input type="text" id="product_count" name="product_count" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" style="ime-mode:disabled;width:50px;" value="<?= $productCount?>" />
+				제품 갯수 선택 : <input type="text" id="product_count" name="product_count" onKeypress="if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" pattern="[0-9]*" style="width:50px;" title="숫자값만 입력 해주세요." value="<?= $productCount?>" />
 			</div>
 			<?php }?>
 			

@@ -20,28 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<img alt="" src="/roothaus/resource/image/common/line_001.gif" />
 	</div>
 	
-	<div class="category">
-		
-		<?php 
-		foreach($categoryList as $var=>$val) {	
-		?>
-		<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $val->category_id?>">
-			 <span
-				id="category_<?= $val->category_id?>">
-					<?= $val->category_name?>
-			</span>
-		</a>
- 		<?php
- 			if ($var == 10) {
- 				?><img alt="" src="/roothaus/resource/image/common/line_002.gif" /><br/><?php 
- 			} else if ($var == 21) {
- 				?><img alt="" src="/roothaus/resource/image/common/line_003.gif" /><?php
- 			} else {
- 				echo " | ";
- 			}
-		}
-		?>
-	</div>
+	<?php include 'estimate_top_category_view.php';?>
 	
 	<div>
 		<img alt="" src="/roothaus/resource/image/common/line_002.gif" />

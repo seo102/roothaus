@@ -27,39 +27,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<img alt="" src="/roothaus/resource/image/common/line_001.gif" />
 	</div>
 	
-	<div class="category">
-		
-		<?php 
-		foreach($categoryList as $var=>$val) {	
-		?>
-		<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $val->category_id?>">
-			 <span
-				id="category_<?= $val->category_id?>">
-					<?= $val->category_name?>
-			</span>
-		</a>
- 		<?php
- 			if ($var == 10) {
- 				?><img alt="" src="/roothaus/resource/image/common/line_002.gif" /><br/><?php 
- 			} else if ($var == 21) {
- 				?><img alt="" src="/roothaus/resource/image/common/line_003.gif" /><?php
- 			} else {
- 				echo " | ";
- 			}
-		}
-		?>
-	</div>
+	<?php include 'estimate_top_category_view.php';?>
 	
 	<div>
 		<img alt="" src="/roothaus/resource/image/common/line_002.gif" />
 	</div>
 	
 	<div class="content">
+		<!--  
 		<div class="title">
 			<img style="float:left;" alt="" src="/roothaus/resource/image/common/bar_002.gif" />
 			<span style="margin: 30px 0 0 20px;"><?= $categoryNameList[$categoryId]?> (<?= $productListSize?>)</span>
 			<img style="float: right;" alt="" src="/roothaus/resource/image/common/line_100.gif" />
 		</div>
+		-->
+		<div id="title_01">
+		  <p>  <div class="title_02"><?= $categoryNameList[$categoryId]?> (<?= $productListSize?>)</div></p>
+		  <p>&nbsp;</p>
+		  <p>  <div class="title_03">본견적서는 참고용으로만 쓰는 문서입니다.</div></p>
+		</div>
+		<div id="main_space_04">&nbsp;</div>
+				
 		
 		<div class="product_list">
 			
@@ -221,7 +209,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</script>
 	
 	<?php include 'common/footer.php';?>
-
 
 </body>
 
