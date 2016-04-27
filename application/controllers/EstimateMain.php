@@ -76,14 +76,31 @@ class EstimateMain extends CI_Controller {
 	}
 	
 	// 견적 리스트 조회
-	public function estList()
+	public function estList($page)
 	{
 		$createId = "admin"; // 세션에 저장되어 있는 로그인 한 아이디 값을 넣어야 함 //asdf
+				
+		if ($page == null) {
+			$page = 0;
+		}
+		$listPerPage = 8; // 한 페이지 아이템 갯수
 		
 		$this->load->model('estimate/Estimate_result_model', '', TRUE);
-		$this->data['estimateResultList'] = $this->Estimate_result_model->get_estimate_result_List($createId);
 		
-		$this->load->view('estimate/estimate_list_view', $this->data);
+		$this->data['estimateResultCount'] = $this->Estimate_result_model->get_estimate_result_count($createId); // 전체 갯수 가져옴
+		$this->data['estimateResultList'] = $this->Estimate_result_model->get_estimate_result_List($createId, $page, $listPerPage);
+		
+		// 페이징
+		$this->load->library('pagination');
+		$config['base_url'] = '/roothaus/index.php/estimateMain/estList/';
+		$config['total_rows'] = $this->data['estimateResultCount']->totalCount;
+		$config['per_page'] = $listPerPage;
+		$this->pagination->initialize($config);
+		//echo $this->pagination->create_links();
+		$this->data['paging'] = $this->pagination->create_links();
+		
+		
+		$this->load->view('estimate/estimate_list_view', $this->data);	
 	}
 	
 	// 견적 결과

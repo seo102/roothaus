@@ -37,14 +37,21 @@ class Estimate_result_model extends CI_Model {
 	// 제품 옵션 정보
 	var $option_price = '';
 	var $option_name = '';
+	var $totalCount = '';
 	
 			
 	function __construct() {
 		parent::__construct();
 	}
 	
-	function get_estimate_result_List($createId) {
-		$sql = "SELECT * FROM est_estimate_info WHERE create_id = '".$createId."'" ;
+	function get_estimate_result_count($createId) {
+		$sql = "SELECT count(1) as 'totalCount' FROM est_estimate_info WHERE create_id = '".$createId."'";
+		$query = $this->db->query($sql);
+		return $query->row();
+	}
+	
+	function get_estimate_result_List($createId, $page, $listPerPage) {
+		$sql = "SELECT * FROM est_estimate_info WHERE create_id = '".$createId."' limit ".$page.", ".$listPerPage ;
 		$query = $this->db->query($sql);
 		return $query->result();
 	}
