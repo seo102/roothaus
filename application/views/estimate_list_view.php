@@ -22,7 +22,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 				<?php
 				foreach ($estimateResultList as $var) {
 					?>
-					<a href="/roothaus/index.php/estimate/result/<?= $var->estimate_id?>"><h6>견적제목 : <?= $var->title?></h6></a>
+					<a href="/roothaus/estimate/result/<?= $var->estimate_id?>"><h6>견적제목 : <?= $var->title?></h6></a>
 					<?php 
 				}
 				?>

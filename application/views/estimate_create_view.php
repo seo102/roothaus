@@ -28,20 +28,20 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 			    $arrSize = sizeof($categoryList);
 				if ($categoryId == 'basic') {
 				?>					
-					<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><span>다음으로</span></a>
+					<a href="/roothaus/estimate/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><span>다음으로</span></a>
 				<?php 
 				} else {
 					if ($categoryByOrder[$categoryId] > 1) {
 				?>
-					<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]-2]->category_id?>"><span>이전으로</span></a>&nbsp;&nbsp;&nbsp;
+					<a href="/roothaus/estimate/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]-2]->category_id?>"><span>이전으로</span></a>&nbsp;&nbsp;&nbsp;
 					<?php 
 					} else {
 					?>
-						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/basic"><span>이전으로</span></a>&nbsp;&nbsp;&nbsp;
+						<a href="/roothaus/estimate/createEst/<?= $estimateId?>/basic"><span>이전으로</span></a>&nbsp;&nbsp;&nbsp;
 					<?php
 					}					
 					if ($categoryByOrder[$categoryId] < $arrSize) {?>
-						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]]->category_id?>"><span>다음으로</span></a>
+						<a href="/roothaus/estimate/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]]->category_id?>"><span>다음으로</span></a>
 				<?php
 					}
 				}
@@ -51,7 +51,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 			<div>
 				<br/>	
 				<h3></h3>
-				<a href="/roothaus/index.php/estimate/result/<?= $estimateId?>">
+				<a href="/roothaus/estimate/result/<?= $estimateId?>">
 					<div class="btn-group">
 					  <button type="submit" class="btn btn-primary">
 					   	견적 내역 확인
@@ -159,7 +159,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 				//return false;
 			}
 			// 제품의 옵션 데이터 레이어 ajax call 
-			var linkUrl = '/roothaus/index.php/estimate/getProductOption/' + option_id + '/' + product_id + '/' + estimate_id + '/' + category_id + '/' + is_selected_product;
+			var linkUrl = '/roothaus/estimate/getProductOption/' + option_id + '/' + product_id + '/' + estimate_id + '/' + category_id + '/' + is_selected_product;
 
 			$.ajax({
 		        type: 'POST',
@@ -194,7 +194,7 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 	<script>
 function getAjaxCall(type) {
 	
-	var linkUrl = '/roothaus/index.php/estimate/getProductOption/' + type;
+	var linkUrl = '/roothaus/estimate/getProductOption/' + type;
 
 	$.ajax({
         type: 'POST',

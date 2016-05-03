@@ -6,7 +6,7 @@
 	<?php }?>
 		
 		<div class="button-area">
-		<form name="saveEstInfo" method="post" action="/roothaus/index.php/estimate/saveEstimateProduct/<?=$isSelectedProduct?>">	
+		<form name="saveEstInfo" method="post" action="/roothaus/estimate/saveEstimateProduct/<?=$isSelectedProduct?>">	
 			<input type="hidden" name="estimate_id" value="<?= $estimateId?>">	
 			<input type="hidden" name="product_id" value="<?= $productId?>">
 			<input type="hidden" name="category_id" value="<?= $categoryId?>">  
@@ -36,7 +36,7 @@
 			</div>
 			  <?php if($isSelectedProduct) {?>
 			<div class="btn-group">	  
-			  <div type="submit" class="btn btn-primary" onclick="document.saveEstInfo.action='/roothaus/index.php/estimate/deleteEstimateProduct/<?=$isSelectedProduct?>';document.saveEstInfo.submit();">
+			  <div type="submit" class="btn btn-primary" onclick="document.saveEstInfo.action='/roothaus/estimate/deleteEstimateProduct/<?=$isSelectedProduct?>';document.saveEstInfo.submit();">
 			   	삭제하기
 			  </div>
 			</div>

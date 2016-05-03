@@ -34,7 +34,7 @@ foreach ($estimateResultList as $var) {
 	}
 	$count++;
 	?>
-	<a href="/roothaus/index.php/estimateMain/result/<?= $var->estimate_id?>">
+	<a href="/roothaus/estimateMain/result/<?= $var->estimate_id?>">
 	<div id="save_01">
 	  <img src="/roothaus/resource/image/common/list_bar_01.jpg" width="220" height="5" /><?= $var->create_datetime?><br />
 	  <br />

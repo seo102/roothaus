@@ -92,7 +92,7 @@ class EstimateMain extends CI_Controller {
 		
 		// 페이징
 		$this->load->library('pagination');
-		$config['base_url'] = '/roothaus/index.php/estimateMain/estList/';
+		$config['base_url'] = '/roothaus/estimateMain/estList/';
 		$config['total_rows'] = $this->data['estimateResultCount']->totalCount;
 		$config['per_page'] = $listPerPage;
 		$this->pagination->initialize($config);
@@ -120,6 +120,26 @@ class EstimateMain extends CI_Controller {
 		$this->data['estimateResultProduct'] = $this->Estimate_result_model->get_estimate_result_product_info($estimateId);
 		$this->data['totalPrice'] = 0;
 		
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////////// -> 기준가격을 DB에 넣어야 하는데 이 부분 논의
+		// 공통사항 정보 가격 가산
+		if ($this->data['estimateResultBasic']->family_count > 1) { 
+			$this->data['totalPrice'] = $this->data['totalPrice'] + 6000000; // 인입공사 - 듀플렉스
+		} else {
+			$this->data['totalPrice'] = $this->data['totalPrice'] + 12000000; // 인입공사 - 단독
+		}
+		if ($this->data['estimateResultBasic']->total_area <= 45) {
+			$this->data['totalPrice'] = $this->data['totalPrice'] + 20000000; // 45평이하			
+		} else if ($this->data['estimateResultBasic']->total_area <= 60) {
+			$this->data['totalPrice'] = $this->data['totalPrice'] + 25000000; // 60평이하			
+		} else {
+			$this->data['totalPrice'] = $this->data['totalPrice'] + 30000000; // 80평이하			
+		}
+		//////////////////////////////////////////////////////////////////////////////////////// -> 기준가격을 DB에 넣어야 하는데 이 부분 논의
+		
+		
+		
 		// 기준 평/m2 값을 저장
 		$basicInfoArray = array();
 		foreach ($this->data['estimateResultBasic'] as $var => $val) {
@@ -146,8 +166,9 @@ class EstimateMain extends CI_Controller {
 				$this->data['estimateResultProduct'][$var]->price = $this->data['estimateResultProduct'][$var]->price * $val->product_count;
 			}
 			
-			$this->data['totalPrice'] = $this->data['totalPrice'] + $this->data['estimateResultProduct'][$var]->price ; // 전체 가격 계산용 
+			$this->data['totalPrice'] = ($this->data['totalPrice'] + $this->data['estimateResultProduct'][$var]->price); // 전체 가격 계산용 
 		}
+		$this->data['totalPrice'] = $this->data['totalPrice'] + $this->data['totalPrice'] * 0.17; // 관리비 5% 와 수익금 12% 가산 // 나중에 DB 필드로 빼야함
 		
 		//print_r($this->data['estimateResultBasic']);
 		//echo "<br><br>";

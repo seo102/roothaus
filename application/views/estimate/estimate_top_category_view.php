@@ -5,8 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		<?php 
 		foreach($categoryList as $var=>$val) {	
+			if ($val->type == 'common') {
+				?><a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/basic"><?php 
+			} else {
+				?><a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $val->category_id?>"><?php
+			}
 		?>
-		<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $val->category_id?>">
 			 <span
 				id="category_<?= $val->category_id?>">
 					<img src="/roothaus/resource/image/estimate/category/manu_<?= $val->category_id?>.jpg" title="<?= $val->category_name?>" width="60" height="30" />

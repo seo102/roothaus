@@ -7,7 +7,7 @@
 	<li class="tree-node tree-root-node tree-data-14594054317963193824"
 		id="category_basic">
 		<h2 class="tree-has-child">
-			<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/basic" class="tree-label"
+			<a href="/roothaus/estimate/createEst/<?= $estimateId?>/basic" class="tree-label"
 				unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">기본 정보</a>
 		</h2>
 	</li>
@@ -28,7 +28,7 @@
 		id="category_<?= $val->category_id?>">
 				<div class="tree-has-child">
 				<span class="tree-button"></span><a
-					href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $val->category_id?>" class="tree-label"
+					href="/roothaus/estimate/createEst/<?= $estimateId?>/<?= $val->category_id?>" class="tree-label"
 					unselectable="on"
 					onclick=""><?= $val->category_name?></a>
 					</div>
@@ -57,7 +57,7 @@
 					id="category_<?= $val->category_id?>">
 					<div class="tree-has-child">
 						<button class="tree-button">열기</button>
-						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $val->category_id?>" class="tree-label"
+						<a href="/roothaus/estimate/createEst/<?= $estimateId?>/<?= $val->category_id?>" class="tree-label"
 							unselectable="on"
 							onclick=""><?= $val->category_name?></a>
 					</div>
@@ -78,7 +78,7 @@
 				<li class="tree-node tree-root-node tree-data-14594054317963193824"
 					id="basic">
 					<h2 class="tree-has-child">
-						<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/basic" class="tree-label"
+						<a href="/roothaus/estimate/createEst/<?= $estimateId?>/basic" class="tree-label"
 							unselectable="on" onclick="clickcr(this,'lnv.cat2','','',event);">기본 정보</a>
 					</h2>
 				</li>
@@ -95,7 +95,7 @@
 							id="category_52411">
 							<div class="">
 								<span class="tree-button"></span><a
-									href="/roothaus/index.php/estimate/createEst" class="tree-label"
+									href="/roothaus/estimate/createEst" class="tree-label"
 									unselectable="on"
 									onclick="">주택형태</a>
 							</div>
@@ -105,7 +105,7 @@
 							id="category_5241">
 							<div class="">
 								<span class="tree-button"></span><a
-									href="/roothaus/index.php/estimate/createEst" class="tree-label"
+									href="/roothaus/estimate/createEst" class="tree-label"
 									unselectable="on"
 									onclick="">주택위치</a>
 							</div>

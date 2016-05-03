@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				?>					
 					<div class="product<?if($isSelectedProduct){?> selected<?}?>" id="product_id_<?= $val->product_id?>" onclick="selectProduct('product_id_<?= $val->product_id?>', '<?= $val->product_name?>', event, '<?= $val->option_type_id?>', '<?= $val->product_id?>', '<?= $estimateId?>', '<?= $categoryId ?>','<?= $isSelectedProduct?>', '<?= $val->use_count?>');">
 						<hr style="border: 3px solid;">
-						<img alt="<?= $val->image_url?>" src="http://www.sebong.co.kr/attach/1/1118312504.jpg" width="220px;">
+						<img alt="<?= $val->product_name?>" src="/roothaus/resource/image/estimate/product/<?= $val->image_url?>" width="220px;" height="220px;" onerror="this.src='/roothaus/resource/image/estimate/logo_01.jpg';">
 						<hr style="border: 1px solid;">
 						<div class="product_title"><?= $val->product_name?></div>
 						<div class="product_desc" alt="" title="<?=$val->desc?>"><?= mb_strimwidth($val->desc, 0, 270, "...", "UTF-8");?></div>
@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		<br/><br/><br/>
 		<div class="" style="clear:both;display:block;">
-		  <a href="/roothaus/index.php/estimateMain/result/<?= $estimateId?>">
+		  <a href="/roothaus/estimateMain/result/<?= $estimateId?>">
 	  	      <div class="btn btn-primary">
 			    견적 결과 보기
 			  </div>
@@ -103,20 +103,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		?>					
 		<img alt="" src="/roothaus/resource/image/common/prev.jpg" />
 		<img alt="" src="/roothaus/resource/image/common/bar_001.gif" />		
-			<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
+			<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
 		<?php 
 		} else {
-			if ($categoryByOrder[$categoryId] > 1) {
+			//if ($categoryByOrder[$categoryId] > 1) {
+			if ($categoryList[$categoryByOrder[$categoryId]-2]->type != 'common') {
 		?>
-			<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]-2]->category_id?>"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
+			<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]-2]->category_id?>"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
 			<?php 
 			} else {
 			?>
-				<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/basic"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
+				<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/basic"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
 			<?php
 			}					
 			if ($categoryByOrder[$categoryId] < $arrSize) {?>
-				<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
+				<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
 		<?php
 			} else {
 			?>
@@ -177,7 +178,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				//return false;
 			}
 			// 제품의 옵션 데이터 레이어 ajax call 
-			var linkUrl = '/roothaus/index.php/estimateMain/getProductOption/' + option_id + '/' + product_id + '/' + estimate_id + '/' + category_id + '/' + is_selected_product + '/' + use_count;
+			var linkUrl = '/roothaus/estimateMain/getProductOption/' + option_id + '/' + product_id + '/' + estimate_id + '/' + category_id + '/' + is_selected_product + '/' + use_count;
 
 			$.ajax({
 		        type: 'POST',

@@ -40,13 +40,13 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 			<?php 
 				if ($categoryId == 'basic') {
 				?>					
-					<a href="/roothaus/index.php/estimate/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><span>다음으로</span></a>
+					<a href="/roothaus/estimate/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><span>다음으로</span></a>
 				<?php 
 				}
 			?>
 			</div>
 			
-			<form name="saveEstInfo" method="post" action="/roothaus/index.php/estimate/saveEstimateInfo">	
+			<form name="saveEstInfo" method="post" action="/roothaus/estimate/saveEstimateInfo">	
 				<input type="hidden" name="estimate_id" value="<?= $estimateId?>">	
 				<div class="" style="text-align:left;padding: 0 0 0 10%;">
 				본 예상견적서는 루트 건축물에 도움이 되고자 만든 것입니다.<br/>

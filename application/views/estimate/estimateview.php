@@ -33,6 +33,10 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 	   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 	}
 	</script>
+	
+	<?php if( @$this->session->userdata['isLogin'] == TRUE ) {
+		echo @$this->session->userdata['name']." 님 로그인 중입니다.";
+	}?>
 </head>
 
 <body onload="MM_preloadImages('/roothaus/resource/image/estimate/save_01_roll.jpg','/roothaus/resource/image/estimate/new_01_roll.jpg')">
@@ -40,9 +44,9 @@ defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
 <div id="center_top"><img src="/roothaus/resource/image/estimate/logo_01.jpg" width="960" height="300" /></div>
 <div id="main_space_09">
   <div class="save_new">
-  <a href="/roothaus/index.php/estimateMain/estList" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','/roothaus/resource/image/estimate/save_01_roll.jpg',1)">
+  <a href="/roothaus/estimateMain/estList" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','/roothaus/resource/image/estimate/save_01_roll.jpg',1)">
   	<img src="/roothaus/resource/image/estimate/save_01.jpg" width="390" height="230" id="Image3" /></a>
-  <a href="/roothaus/index.php/estimateMain/createEst/0/basic" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','/roothaus/resource/image/estimate/new_01_roll.jpg',1)">
+  <a href="/roothaus/estimateMain/createEst/0/basic" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','/roothaus/resource/image/estimate/new_01_roll.jpg',1)">
   	<img src="/roothaus/resource/image/estimate/new_01.jpg" width="390" height="230" id="Image4" /></a>
   </div>
 </div>

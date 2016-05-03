@@ -89,7 +89,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<div class="category_paging">
 					
-		<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a>
+		<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a>
 		<img alt="" src="/roothaus/resource/image/common/bar_001.gif" />		
 		<span onclick="printResult();"><img alt="" src="/roothaus/resource/image/common/print.jpg" /></span>
 		

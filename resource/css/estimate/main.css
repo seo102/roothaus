@@ -34,19 +34,9 @@ body {font-family:'µ¸¿ò',dotum,Helvetica,sans-serif;text-align:center;}
 .star-rating,.star-rating span { display:inline-block; overflow:hidden; height:10px; background:url(/roothaus/resource/image/common/grade.png)no-repeat; }
 .star-rating span{ background-position:left bottom; line-height:0; vertical-align:top;float:left; }
 
-#divpop {
-	position:absolute;left:0px;top:0px;/*width:50%;height:30%;*/
-	z-index:10;background-color:#000000;opacity:.97;filter:alpha(opacity=97);color: #A5A1A1;
-	}
-
-.layer-text {
-	padding:30px;
-	display: inherit;
-}	
-
-.button-area {
-	padding:0 0 30px 0;
-}
+#divpop {position:absolute;left:0px;top:0px;/*width:50%;height:30%;*/z-index:10;background-color:#000000;opacity:.97;filter:alpha(opacity=97);color: #A5A1A1;}
+.layer-text {padding:30px;display: inherit;}	
+.button-area {padding:0 0 30px 0;}
 
 .result_list th {text-align:center;background:#F9F9F9;border-top:2px solid #373737;height:36px;border:none;border-bottom:1px solid #D7D7D7;color:#373737; !important}	
 .result_list{overflow:hidden;position:relative;margin:40px 0 67px}
@@ -60,33 +50,11 @@ body {font-family:'µ¸¿ò',dotum,Helvetica,sans-serif;text-align:center;}
 .result_list p a{color:#000CC0}
 .result-sum {border:1px solid #F7B4B4;background-color: #F7B4B4;font-weight: bold;}
 
+.list_paging a,strong {margin: 0 3px 0 3px;}
 
-
-#center_top {
-	padding: 0px;
-	height: 300px;
-	width: 960px;
-	margin-right: auto;
-	margin-left: auto;
-}
-#center_bot {
-	padding: 0px;
-	height: 300px;
-	width: 960px;
-	margin-right: auto;
-	margin-left: auto;
-}
-#main_space_01 {
-	height: 60px;
-	width: 960px;
-	margin-top: 0px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
-	padding-left: 0px;
-}
+#center_top {padding: 0px;height: 300px;width: 960px;margin-right: auto;margin-left: auto;}
+#center_bot {padding: 0px;height: 300px;width: 960px;margin-right: auto;margin-left: auto;}
+#main_space_01 {height: 60px;width: 960px;margin-top: 0px;margin-right: auto;margin-left: auto;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}
 #main_bar_01 {
 	height: 5px;
 	width: 960px;
@@ -290,8 +258,37 @@ body {font-family:'µ¸¿ò',dotum,Helvetica,sans-serif;text-align:center;}
 	float: left;
 }
 
-.list_paging a,strong {margin: 0 3px 0 3px;}
-
-
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .input-group-addon {
+	width:120px;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
  
 

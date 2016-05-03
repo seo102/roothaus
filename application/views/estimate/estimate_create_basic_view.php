@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		
 		<br/><br/><br/>
-		<form name="saveEstInfo" method="post" action="/roothaus/index.php/estimateMain/saveEstimateInfo">	
+		<form name="saveEstInfo" method="post" action="/roothaus/estimateMain/saveEstimateInfo">	
 			<input type="hidden" name="estimate_id" value="<?= $estimateId?>">	
 					
 			<div class="product_list">
@@ -154,7 +154,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				  <button type="submit" class="btn btn-primary" onclick="saveEstInfo();">
 				    기본 정보 저장
 				  </button>
-				  <a href="/roothaus/index.php/estimateMain/result/<?= $estimateId?>">
+				  <a href="/roothaus/estimateMain/result/<?= $estimateId?>">
 			  	      <div class="btn btn-primary">
 					    견적 결과 보기
 					  </div>
@@ -172,20 +172,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		?>					
 		<img alt="" src="/roothaus/resource/image/common/prev.jpg" />
 		<img alt="" src="/roothaus/resource/image/common/bar_001.gif" />		
-			<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[0]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
+			<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[1]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
 		<?php 
 		} else {
 			if ($categoryByOrder[$categoryId] > 1) {
 		?>
-			<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]-2]->category_id?>"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
+			<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]-2]->category_id?>"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
 			<?php 
 			} else {
 			?>
-				<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/basic"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
+				<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/basic"><img alt="" src="/roothaus/resource/image/common/prev.jpg" /></a><img alt="" src="/roothaus/resource/image/common/bar_001.gif" />
 			<?php
 			}					
 			if ($categoryByOrder[$categoryId] < $arrSize) {?>
-				<a href="/roothaus/index.php/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
+				<a href="/roothaus/estimateMain/createEst/<?= $estimateId?>/<?= $categoryList[$categoryByOrder[$categoryId]]->category_id?>"><img alt="" src="/roothaus/resource/image/common/next.jpg" /></a>
 		<?php
 			} else {
 			?>
